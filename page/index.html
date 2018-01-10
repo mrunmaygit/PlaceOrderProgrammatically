@@ -1,0 +1,255 @@
+<html>
+<head>
+	<title>Place Order Programmatically Magento 2</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+	<link rel="stylesheet" src="http://localhost/PlaceOrder/assets/css/main.css"/>
+	<script src="http://localhost/PlaceOrder/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+	<script src="http://localhost/PlaceOrder/assets/js/app.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class = "page-header" style="padding:3%;background-color:#c1c1c1">
+			<center>
+				<h4>
+					<img src="http://localhost/PlaceOrder/assets/images/magento.png" width=40 height=40/><b>  Magento 2 Place Order Programmatically </b>
+				</h4>
+			</center>
+		</div>
+		<form id="orderplaceform" action = "name="orderplaceform">
+			<table class="table table-striped" id="formtable">
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="email">Email address</label>
+						</div>
+					</td>
+
+					<td>
+						<div class="form-group">
+							<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="currency">Currency</label>
+						</div>
+					</td>
+					<td> 
+						<div class="form-group">
+							<select class="form-control" name="currency" id="currency">
+								<option value="USD">USD</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="firstname">Shipping firstname</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="firstname" class="form-control" id="firstname" name="firstname" aria-describedby="emailHelp" placeholder="Enter firstname">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="lastname">Shipping lastname</label>
+						</div> 
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="lastname" class="form-control" id="lastname" name="lastname" aria-describedby="emailHelp" placeholder="Enter lastname">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="street1">Street address</label>
+						</div>  
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="street1" class="form-control" id="street1" name="street1" aria-describedby="emailHelp" placeholder="Enter Street address">
+						</div> 
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="city">City</label>
+						</div>  
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="city" class="form-control" id="city" name="city" aria-describedby="emailHelp" placeholder="Enter City">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="country">Country</label>
+						</div>  
+					</td>
+					<td>
+						<div class="form-group">
+							<select class="form-control" name="country" id="country">
+								<option>-- Select Any country --</option>
+								<option value="IN">India</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="region">Region</label>
+						</div>  
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="region" class="form-control" id="region" name="region" aria-describedby="emailHelp" placeholder="Enter City">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="postcode">Postcode</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="postcode" class="form-control" id="postcode" name="postcode" aria-describedby="emailHelp" placeholder="Enter Postcode">
+						</div> 
+					</td>
+				</tr>	
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="telephone">Telephone</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="telephone" class="form-control" id="telephone" name="telephone" aria-describedby="emailHelp" placeholder="Enter Telehphone">
+						</div>  
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="saveinaddress">Save in Address book</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<select class="form-control" name="saveinaddress" id="saveinaddress">
+								<option value="1">Yes</option>
+								<option value="0">No</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="shippingmethod">Shipping method</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<select class="form-control" name="shippingmethod" id="shippingmethod">
+								<option value="freeshipping_freeshipping">Freeshipping</option>
+								<option value="flatrate_flatrate">Flat Rate</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<div class="form-group">
+							<label for="paymentmethod">Payment method</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<select class="form-control" name="paymentmethod" id="paymentmethod">
+								<option value="checkmo">Check / Money order</option>
+								<option value="cashondelivery">Cash on delivery</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="productid1">Product 1 ID</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="productid1" class="form-control" id="productid1" name="productid1" aria-describedby="emailHelp" >
+						</div>
+					</td>
+					
+				</tr>
+				<tr>
+					<td> 
+						<div class="form-group">
+							<label for="productqty1">Product 1 Quantity</label>
+						</div>
+					</td>
+					<td>
+						<div class="form-group">
+							<input type="productqty1" class="form-control" id="productqty1" name="productqty1" aria-describedby="emailHelp" >
+						</div>
+					</td>
+				</tr>
+			</table> 
+		</form>
+		<center>
+			<button onclick="submitForm()" type="button" class="btn btn-success">Submit</button>
+			<button onclick="clearForm()" type="button" class="btn btn-info">Clear</button>
+			<button onclick="addMoreProducts()" type="button" class="btn btn-success">Add More Products (+)</button>
+		</center>
+	</div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="resultmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header" id="modalheader">
+				<h5 class="modal-title" id="modaltitle"> </h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div id="modalbody" class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
